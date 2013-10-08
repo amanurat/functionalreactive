@@ -108,3 +108,12 @@ val movieListsWithMultipleBoxArts = arrayListOf<GenreAndVideoBoxArt>(
                                         arrayListOf<Bookmark>(Bookmark(432534,65876586))))
                         )
         )
+
+val boxarts = arrayListOf<BoxArt>(
+        BoxArt(200, 200, "http://cdn-0.nflximg.com/images/2891/Fracture200.jpg"),
+        BoxArt(150, 200, "http://cdn-0.nflximg.com/images/2891/Fracture150.jpg"),
+        BoxArt(300, 200, "http://cdn-0.nflximg.com/images/2891/Fracture30.jpg"),
+        BoxArt(425, 150, "http://cdn-0.nflximg.com/images/2891/Fracture450.jpg"))
+
+
+val ratings = arrayListOf(2, 5, 1, 4, 3)

@@ -6,15 +6,24 @@ import org.hadihariri.functionalreactive.movieListsWithMultipleBoxArts
 import org.hadihariri.functionalreactive.BoxArt
 import java.util.ArrayList
 
-class IdTitleBoxArt(val id: Int, val title: String, val boxart: String)
+data class IdTitleBoxArt(val id: Int, val title: String, val boxart: String)
 
 fun main(args: Array<String>) {
 
-    val videos = movieListsWithMultipleBoxArts
-    println(videos)
+    val result = movieListsWithMultipleBoxArts.flatMap {
+        it.videos.flatMap {
+            val id = it.id
+            val title = it.title
+            it.boxart.filter {
+                it.width == 150 && it.height == 200
+            }.map { IdTitleBoxArt (id, title, it.url)}
+        }
+    }
+    println(result)
 
 
 
 
 }
+
 
